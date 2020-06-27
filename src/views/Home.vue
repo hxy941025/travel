@@ -1,13 +1,16 @@
 <template>
   <div class="home">
-    "Welcome to Your Vue.js App"
+    <home-header></home-header>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
+import HomeHeader from '@c/Home/Header'
 export default {
   name: 'Home',
+  components: {
+    HomeHeader
+  }
 }
 </script>
