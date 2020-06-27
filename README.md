@@ -1,5 +1,12 @@
 # travel
 
+
+#### 项目搭建
+- 初始化样式：reset.css
+- 1px边框问题： border.css
+- 300ms延迟问题： fastclick
+
+
 ## Project setup
 ```
 npm install
