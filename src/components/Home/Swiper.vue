@@ -45,7 +45,7 @@ export default {
   overflow: hidden;
   width: 100%;
   height: 0;
-  //padding百分比为相对自身，width为相对父级
+  //padding-bottom % 计算是根据父元素的width的值进行计算的
   padding-bottom: 26.7%;
   background: #eee;
 
