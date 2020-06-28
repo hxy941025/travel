@@ -1,112 +1,134 @@
 <template>
-    <div class="icons" >
-        <swiper>
-            <swiper-slide class="swiper-container" v-for="(page, index) of pages" :key="index">
-                <div class="icon" v-for="item in page" :key="item.id">
-                    <div class="icon-img">
-                        <img class="icon-imgContent" :src="item.imgUrl" alt="">
-                    </div>
-                    <p class="icon-desc">{{item.desc}}</p>
-                </div>
-            </swiper-slide>
-        </swiper>
-    </div>
+  <div class="icons">
+    <swiper>
+      <swiper-slide
+        class="swiper-container"
+        v-for="(page, index) of pages"
+        :key="index"
+      >
+        <div class="icon" v-for="item in page" :key="item.id">
+          <div class="icon-img">
+            <img class="icon-imgContent" :src="item.imgUrl" alt="" />
+          </div>
+          <p class="icon-desc">{{ item.desc }}</p>
+        </div>
+      </swiper-slide>
+    </swiper>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "HomeIcons",
-        data(){
-            return{
-                iconList: [
-                    {
-                        id: '0001',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                        desc: '景点门票景点门票景点门票景点门票'
-                    }, {
-                        id: '0002',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-                        desc: '一日游'
-                    }, {
-                        id: '0003',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-                        desc: '北京必游'
-                    }, {
-                        id: '0004',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',
-                        desc: '溜娃儿'
-                    }, {
-                        id: '0005',
-                        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20191/0334cf5430b9b5505fd79e2b8d7e8670.png',
-                        desc: '爬长城'
-                    }, {
-                        id: '0006',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/6c/9e54a8540fee0102.png',
-                        desc: '故宫'
-                    }, {
-                        id: '0007',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png',
-                        desc: '茶馆相声'
-                    }, {
-                        id: '0008',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/fc/b10a6b2e4f0fe102.png',
-                        desc: '北京滑雪'
-                    }, {
-                        id: '0009',
-                        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-                        desc: '动植物园'
-                    }
-                ]
-            }
+export default {
+  name: "HomeIcons",
+  data() {
+    return {
+      iconList: [
+        {
+          id: "0001",
+          imgUrl:
+            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
+          desc: "景点门票",
         },
-        computed: {
-            pages (){
-                const pages = []
-                this.iconList.forEach((item, index)=> {
-                    const page = Math.floor(index/8)
-                    if (!pages[page]){
-                        pages[page] = []
-                    }
-                    pages[page].push(item)
-                })
-                return pages
-            }
+        {
+          id: "0002",
+          imgUrl:
+            "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
+          desc: "一日游",
+        },
+        {
+          id: "0003",
+          imgUrl:
+            "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png",
+          desc: "北京必游",
+        },
+        {
+          id: "0004",
+          imgUrl:
+            "http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png",
+          desc: "溜娃儿",
+        },
+        {
+          id: "0005",
+          imgUrl:
+            "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20191/0334cf5430b9b5505fd79e2b8d7e8670.png",
+          desc: "爬长城",
+        },
+        {
+          id: "0006",
+          imgUrl:
+            "http://img1.qunarzz.com/piao/fusion/1803/6c/9e54a8540fee0102.png",
+          desc: "故宫",
+        },
+        {
+          id: "0007",
+          imgUrl:
+            "http://img1.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png",
+          desc: "茶馆相声",
+        },
+        {
+          id: "0008",
+          imgUrl:
+            "http://img1.qunarzz.com/piao/fusion/1803/fc/b10a6b2e4f0fe102.png",
+          desc: "北京滑雪",
+        },
+        {
+          id: "0009",
+          imgUrl:
+            "http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png",
+          desc: "动植物园",
+        },
+      ],
+    };
+  },
+  computed: {
+    pages() {
+      const pages = [];
+      this.iconList.forEach((item, index) => {
+        const page = Math.floor(index / 8);
+        if (!pages[page]) {
+          pages[page] = [];
         }
-    }
+        pages[page].push(item);
+      });
+      return pages;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-    @import "styles/mixin.scss";
-    .icons{
-        .swiper-container{
-            //拿padding占位高度
-            overflow: hidden;
-            height: 0;
-            padding-bottom: 50%;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            align-items: center;
-            .icon {
-                width: 25%;
-                height: 0;
-                padding-bottom: 25%;
-                bottom: .44rem;
-                .icon-img{
-                    @include center();
-                    .icon-imgContent{
-                        //宽度自动继承，高度需手动继承
-                        width: 75%;
-                    }
-                }
-                .icon-desc{
-                    //flex与ellipsis冲突，尝试修改min-width、max-width未果，放弃flex
-                    height: .44rem;
-                    line-height: .44rem;
-                    text-align: center;
-                    @include ellipsis()
-                }
-            }
+@import "styles/mixin.scss";
+.icons {
+  margin-top: 0.1rem;
+  .swiper-container {
+    //拿padding占位高度
+    overflow: hidden;
+    height: 0;
+    padding-bottom: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    .icon {
+      width: 25%;
+      height: 0;
+      padding-bottom: 25%;
+      bottom: 0.44rem;
+      .icon-img {
+        @include center();
+        .icon-imgContent {
+          //宽度自动继承，高度需手动继承
+          width: 75%;
         }
+      }
+      .icon-desc {
+        //flex与ellipsis冲突，尝试修改min-width、max-width未果，放弃flex
+        height: 0.44rem;
+        line-height: 0.44rem;
+        text-align: center;
+        @include ellipsis();
+      }
     }
+  }
+}
 </style>

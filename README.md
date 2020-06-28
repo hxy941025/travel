@@ -9,7 +9,8 @@
 
 #### 踩坑点
 - swiper组件name：引用vue-awesome-swiper后，不能存在任何组件name为swiper，否则报错
-- flex布局下ellipsis失效
+- 当采用flex布局居中时，ellipsis失效，尝试min-width、max-width均无效
+- 当使用flex: 1时，ellipsis失效，可以用min-width: 0,使其恢复
 
 
 ## Project setup
