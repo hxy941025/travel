@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOptions">
       <swiper-slide
         class="swiper-container"
         v-for="(page, index) of pages"
@@ -20,70 +20,20 @@
 <script>
 export default {
   name: "HomeIcons",
+  props:{
+    list: Array
+  },
   data() {
     return {
-      iconList: [
-        {
-          id: "0001",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          desc: "景点门票",
-        },
-        {
-          id: "0002",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
-          desc: "一日游",
-        },
-        {
-          id: "0003",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png",
-          desc: "北京必游",
-        },
-        {
-          id: "0004",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png",
-          desc: "溜娃儿",
-        },
-        {
-          id: "0005",
-          imgUrl:
-            "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20191/0334cf5430b9b5505fd79e2b8d7e8670.png",
-          desc: "爬长城",
-        },
-        {
-          id: "0006",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/6c/9e54a8540fee0102.png",
-          desc: "故宫",
-        },
-        {
-          id: "0007",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png",
-          desc: "茶馆相声",
-        },
-        {
-          id: "0008",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/fc/b10a6b2e4f0fe102.png",
-          desc: "北京滑雪",
-        },
-        {
-          id: "0009",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png",
-          desc: "动植物园",
-        },
-      ],
+      swiperOptions: {
+        autoplay: false
+      },
     };
   },
   computed: {
     pages() {
       const pages = [];
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8);
         if (!pages[page]) {
           pages[page] = [];
@@ -118,7 +68,7 @@ export default {
         @include center();
         .icon-imgContent {
           //宽度自动继承，高度需手动继承
-          width: 75%;
+          width: 70%;
         }
       }
       .icon-desc {
