@@ -7,6 +7,11 @@
 - 300ms延迟问题： fastclick
 
 
+#### 踩坑点
+- swiper组件name：引用vue-awesome-swiper后，不能存在任何组件name为swiper，否则报错
+- flex布局下ellipsis失效
+
+
 ## Project setup
 ```
 npm install
