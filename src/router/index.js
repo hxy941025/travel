@@ -15,12 +15,22 @@ const routes = [
     name: "City",
     component: () => import("@/views/City"),
   },
+  {
+    path: "/detail/:id",
+    name: "Detail",
+    component: () => import("@/views/Detail"),
+  },
 ];
+
+const scrollBehavior =  (to, from, savedPosition) => {
+  return { x: 0, y: 0 }
+}
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+  scrollBehavior
 });
 
 export default router;
