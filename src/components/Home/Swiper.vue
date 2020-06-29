@@ -14,7 +14,7 @@ export default {
   //此处name不能命名为swiper，否则报错maximum call stack size exceed
   name: "HomeSwiper",
   props: {
-    list: Array
+    list: Array,
   },
   data() {
     return {
@@ -25,10 +25,10 @@ export default {
     };
   },
   computed: {
-    showSwiper () {
-      return this.list.length
-    }
-  }
+    showSwiper() {
+      return this.list.length;
+    },
+  },
 };
 </script>
 

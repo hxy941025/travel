@@ -20,13 +20,13 @@
 <script>
 export default {
   name: "HomeIcons",
-  props:{
-    list: Array
+  props: {
+    list: Array,
   },
   data() {
     return {
       swiperOptions: {
-        autoplay: false
+        autoplay: false,
       },
     };
   },
