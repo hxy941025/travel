@@ -46,9 +46,9 @@ export default {
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
   },
-  destroyed(){
+  destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
-  }
+  },
   // activated() {
   //   window.addEventListener("scroll", this.handleScroll);
   // },

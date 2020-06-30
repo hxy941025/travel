@@ -94,9 +94,9 @@ export default {
       scrollX: false,
       mouseWheel: true,
       click: true,
-      taps: true
-    }
-    this.scroll = new BScroll(this.$refs.search, options)
+      taps: true,
+    };
+    this.scroll = new BScroll(this.$refs.search, options);
   },
 };
 </script>

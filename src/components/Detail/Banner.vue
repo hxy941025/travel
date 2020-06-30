@@ -10,13 +10,13 @@
         </div>
       </div>
     </div>
-  <fade>
-    <gallary
-            @close="handleClose"
-            :gallaryImgs="gallaryImgs"
-            v-show="showGallary"
-    ></gallary>
-  </fade>
+    <fade>
+      <gallary
+        @close="handleClose"
+        :gallaryImgs="gallaryImgs"
+        v-show="showGallary"
+      ></gallary>
+    </fade>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
   name: "DetailBanner",
   components: {
     Gallary,
-    Fade
+    Fade,
   },
   props: {
     sightName: String,

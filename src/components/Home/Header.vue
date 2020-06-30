@@ -69,9 +69,9 @@ export default {
       display: inline-block;
       width: 0;
       height: 0;
-      border-left: .15rem solid transparent;
-      border-right: .15rem solid transparent;
-      border-top: .24rem solid white;
+      border-left: 0.15rem solid transparent;
+      border-right: 0.15rem solid transparent;
+      border-top: 0.24rem solid white;
     }
   }
 }
