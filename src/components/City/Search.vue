@@ -89,7 +89,14 @@ export default {
     },
   },
   mounted() {
-    this.scroll = new BScroll(this.$refs.search);
+    const options = {
+      scrollY: true,
+      scrollX: false,
+      mouseWheel: true,
+      click: true,
+      taps: true
+    }
+    this.scroll = new BScroll(this.$refs.search, options)
   },
 };
 </script>

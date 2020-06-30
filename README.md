@@ -1,30 +1,43 @@
 # travel
 
-#### 项目搭建
-- 初始化样式：reset.css
-- 1px边框问题： border.css
-- 300ms延迟问题： fastclick
-- 加滚动：better-scroll
-- 函数节流： 减少拖动、搜索时函数触发频率
-- keep-alive： 路由加载后，缓存放入内存之中，下次再进路由不需要重新加载，使用keep-alive后新增生命周期函数activated
-- 详情页 返回按钮及返回栏 切换，渐隐效果实现，增加节流函数减少其触发频率 
+### 技术栈
+- Vue全家桶 + axios + vue-awesome-swiper + better-scroll  
 
-#### 踩坑点
-- swiper组件name：引用vue-awesome-swiper后，不能存在任何组件name为swiper，否则报错
-- 当采用flex居中时，ellipsis失效，尝试min-width、max-width均无效
-- 当使用flex:1时，ellipsis失效，可以用min-width: 0,使其恢复
-- 尝试使用provide+inject，但是mounted阶段ajax获取数据对于provide已经晚了，provide+inject在created之前，beforeCreate之后
-
-#### 知识点
-组件name用途
-- 递归组件
-- keep-alive时取消缓存
-- vue-devtools里组件的name
+### 实现功能
+- 首页：轮播图展示 + 自动分页轮播图 + 多区域列表展示
+- 景点详情页：顶部栏渐隐切换 + 图片画廊展示组件 + 递归组件实现多级列表展示
+- 城市选择页：城市列表与右侧城市名首字母表联动（可在右侧字母列表点击或滑动，实现左侧城市展示列表变化）+ 城市搜索 + 城市选择
 
 
+### 主要技术点
+#### Vue
+- 组件间通信：父子、兄弟、Vuex
+- keep-alive优化性能
+- 递归组件实现多级列表展示
+- vue-router：异步组件加载 + 页面跳转回归顶部
+- vue动画
+
+#### Css
+- 初始化样式：reset.css、1px边框问题：border.css
+- 图片占位：防止图片加载过程导致页面抖动，overflow: hidden + height:0 + padding-bottom: 图片宽高比占位
+- scss + rem 实现自适应布局（rem为html font-size相对值）
+- 纯css实现三角形（宽高为0，利用border + transparent）
+- 文字溢出省略：overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
 
 #### 优化
+- 解决300ms延迟问题：fastclick（利用touch事件先于click执行，在touch中屏蔽默认click后，模拟合成click事件）
+- 移动端滚动优化：better-scroll（父overflow hidden，子超出父高度，transform: translate）
+- 函数节流：减少拖动、搜索时函数触发频率（clearTimeout + setTimeout）
+- keep-alive：路由加载后缓存放入内存之中，下次再进路由不需要重新加载
+- webpack-devServer代理请求到本地mock数据，将组件中数据抽离
+
+#### 踩坑点
+- 引用vue-awesome-swiper后，不能存在任何组件name为swiper，否则报错
+- 当采用display:flex 时，ellipsis失效，尝试min-width、max-width均无效
+- 当使用flex:1时，ellipsis失效，可以用min-width: 0,使其恢复
+- 尝试使用provide+inject，但是mounted阶段ajax获取数据对于provide已经晚了，provide+inject在created之前，beforeCreate之后
 - 由于采用exclude将detail排除keep-alive之外，因此detail里header组件下activated等生命周期钩子失效，改为mounted+destroyed来移除全局事件
+- better-scroll导致click失效，原因：better-scroll 默认会阻止浏览器的原生 click 事件，实例化BScroll时增加一个options，设置click、top为true
 
 
 ## Project setup

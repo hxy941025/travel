@@ -64,6 +64,7 @@ export default {
   },
   methods: {
     handleCityClick(city) {
+
       this.changeCity(city);
       this.$router.push("/");
     },
@@ -71,7 +72,14 @@ export default {
     ...mapActions(["changeCity"]),
   },
   mounted() {
-    this.scroll = new BScroll(this.$refs.wrapper);
+      const options = {
+        scrollY: true,
+        scrollX: false,
+        mouseWheel: true,
+        click: true,
+        taps: true
+      }
+      this.scroll = new BScroll(this.$refs.wrapper, options)
   },
 };
 </script>

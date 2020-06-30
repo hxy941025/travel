@@ -26,11 +26,11 @@ export default {
   },
   methods: {
     handleScroll() {
-      console.log(11);
       if (this.timer) {
         clearTimeout(this.timer);
       }
       this.timer = setTimeout(() => {
+        //documentElement 属性以一个元素对象返回一个文档的文档元素
         const top = document.documentElement.scrollTop;
         if (top > 45) {
           let opacity = top / 120;
