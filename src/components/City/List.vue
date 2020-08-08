@@ -52,6 +52,7 @@ export default {
   watch: {
     letter() {
       if (this.letter) {
+        // 遍历渲染列表时先为每个字母部分绑定ref，方便此处获取DOM元素
         const element = this.$refs[this.letter][0];
         this.scroll.scrollToElement(element);
       }
