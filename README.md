@@ -27,12 +27,11 @@
 #### 优化
 - 解决300ms延迟问题：fastclick（利用touch事件先于click执行，在touch中屏蔽默认click后，模拟合成click事件）
 - 移动端滚动优化：better-scroll（父overflow hidden，子超出父高度，transform: translate）
-- 函数节流：减少拖动、搜索时函数触发频率（clearTimeout + setTimeout）
+- 函数防抖：减少拖动、搜索时函数触发频率（clearTimeout + setTimeout）
 - keep-alive：路由加载后缓存放入内存之中，下次再进路由不需要重新加载
 - webpack-devServer代理请求到本地mock数据，将组件中数据抽离
 
 #### 踩坑点
-- 引用vue-awesome-swiper后，不能存在任何组件name为swiper，否则报错
 - 当采用display:flex 时，ellipsis失效，尝试min-width、max-width均无效
 - 当使用flex:1时，ellipsis失效，可以用min-width: 0,使其恢复
 - 尝试使用provide+inject，但是mounted阶段ajax获取数据对于provide已经晚了，provide+inject在created之前，beforeCreate之后
