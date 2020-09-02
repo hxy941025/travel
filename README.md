@@ -14,7 +14,7 @@
 - 组件间通信：父子、兄弟、Vuex
 - keep-alive优化性能
 - 递归组件实现多级列表展示
-- vue-router：异步组件加载 + 页面跳转回归顶部
+- vue-router：懒加载 + 页面跳转回归顶部
 - vue动画
 
 #### Css
@@ -30,13 +30,6 @@
 - 函数防抖：减少拖动、搜索时函数触发频率（clearTimeout + setTimeout）
 - keep-alive：路由加载后缓存放入内存之中，下次再进路由不需要重新加载
 - webpack-devServer代理请求到本地mock数据，将组件中数据抽离
-
-#### 踩坑点
-- 当采用display:flex 时，ellipsis失效，尝试min-width、max-width均无效
-- 当使用flex:1时，ellipsis失效，可以用min-width: 0,使其恢复
-- 尝试使用provide+inject，但是mounted阶段ajax获取数据对于provide已经晚了，provide+inject在created之前，beforeCreate之后
-- 由于采用exclude将detail排除keep-alive之外，因此detail里header组件下activated等生命周期钩子失效，改为mounted+destroyed来移除全局事件
-- better-scroll导致click失效，原因：better-scroll 默认会阻止浏览器的原生 click 事件，实例化BScroll时增加一个options，设置click、top为true
 
 
 ## Project setup
