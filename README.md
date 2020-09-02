@@ -1,4 +1,4 @@
-# travel
+# 仿写去哪儿网Web
 
 ### 技术栈
 - Vue全家桶 + axios + vue-awesome-swiper + better-scroll  
